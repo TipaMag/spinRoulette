@@ -1,0 +1,218 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+}
+
+
+.roulette {
+    background: center / cover no-repeat url('../images/Fortune_circle3_BG.jpg');
+    height: 100vh;
+}
+.roulette-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:  center center no-repeat url('../images/Fortune_circle3_work1.png');
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 25px;
+}
+@media screen and (max-width: 769px) {
+    .roulette-body {
+        background: center center no-repeat url('../images/mobile/Fortune_circle_work_768_En.png');
+    }
+} 
+
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 600px;
+    height: 600px;
+}
+@media screen and (max-width: 769px) {
+    .spinner-container {
+        transform: translateY(95px);
+    }
+}
+.sjivo {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    height: 150%;
+    opacity: 0;
+}
+.flash {
+    animation-duration: 0.25s;
+    animation-iteration-count: 2;
+    animation-name: flash;
+}
+@keyframes flash {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+.arrow {
+    position: absolute;
+    z-index: 22;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.spinner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.spin {
+    animation-duration: 3s;
+    animation-name: rotate;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.spin-btn {
+    background: center / contain no-repeat url('/images/PLAY.png');
+    z-index: 11;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    outline: none;
+    width: 230px;
+    height: 230px;
+}
+
+.money-front {
+    position: absolute;
+    max-width: 100%;
+    bottom: 0px;
+}
+
+
+/* ------------------------------------ popup */
+
+.popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0, 0.80);
+    z-index: 99;
+    transition: all 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+.open {
+    opacity: 1;
+    visibility: visible;
+}
+.popup-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: center / contain no-repeat url('../images/popup/congratulations_bg.png');
+    max-width: 612px;
+    width: 100%;
+    height: 575px;
+    z-index: 9999;
+}
+.popup-content {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    height: 384px;
+
+    background: #FFFFFF;
+    border-radius: 5px;
+    padding: 60px 27px 36px;
+}
+.popup-title {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    width: 120%;
+    background: center center no-repeat url('../images/popup/head_flag.png');
+    font-family: 'Roboto Condensed', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 53px;
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+}
+.popup-description {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 44px;
+    line-height: 52px;
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #4B4B4B;
+    margin: 0;
+}
+.popup-description span {
+    color: #7F0900;
+    font-size: 90px;
+    line-height: 90px;
+}
+.popup-text {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #151515;
+    margin: 5px 0 15px;
+}
+
+
+.close-btn {
+    background: center no-repeat url('/images/popup/congratulations_button.png');
+    width: 100%;
+    height: 48px;
+    margin: 0 auto;
+    cursor: pointer;
+
+    font-family: 'Roboto Condensed', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    text-transform: uppercase;
+    outline: none;
+    color: #FFFFFF;
+}
